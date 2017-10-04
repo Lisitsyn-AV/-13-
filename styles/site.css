@@ -1,0 +1,85 @@
+@font-face {      /*Позволяет подключать шрифты к нашему проекту*/
+	font-family: "Open Sans";
+	src: url('../fonts/OpenSans.ttf');   /*Путь к файлу со шрифтом*/
+
+}
+
+@font-face {
+    font-family: "Huntsman";
+    src: url('../fonts/Huntsman.otf'); 
+}
+
+body, html {   /* Для этих тегов не должно быть внутренних и внешних отступов*/
+
+	padding: 0;
+	margin: 0;   
+	font-family: "Open Sans", sans-serif;   /*Активируем шрифт для данных блоков. Если Open Sans не установится, то используется любой шрифт без засечек. sans - это значит без засечек*/
+	color: #5e5e4e /* Шестнадчатеричная система цветов*/
+    ;
+}  
+
+ 
+header {
+    width: 100%;  /* Ширина 100 % */
+    height: 50px;  /* Высота 50 пикселей */
+    padding: 10px 0;   /*Отступы от верхнего и нижнего края по 10 пикселей*. Справа и слева без отступов - 0 пикселе/*/
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);  /*Добавляется серая полоска в 1 пиксель внизу блока. bottom - нижняя часть. solid - непрерывный. 255, 255, 255, - белый цвет. 0,1 - прозрачность в 10% */
+    background: url('../images/promo.jpg') no-repeat;  /*no-repeat - без добавления картинки, если она окажется маленькой */
+    background-size: cover;  /* cover - параметр который позволяет подстраиваться под размер окна*/
+}
+
+#headerInside {   
+    width: 1100px;  /* Ширина элемента зафиксирована в 1100 пикселей.*/
+    margin: 0 auto;  /* Сверху и снизу отступов нет, а слева и справа сколько получится, в зависимости от разрешения экрана */
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+    float: left;    /* логотип будет прибиваться к левому краю*/
+    background: url('../images/origami-logo.svg') no-repeat;
+    background-size: contain;   /*  contane - заставляет фон занимать всю площадь, к которому он применён*/
+}
+
+#companyName {
+    font-family: "Huntsman", sans-serif;
+    float: left;
+    margin-left: 15px;
+    font-size: 50px;
+    line-height: 50px; /* Высота строки 50px для того , чтобы было выравнивание по середине*/
+    color: #fff;
+
+}
+
+#navWrap {
+    align-items: center;  /* Ставит блоки посередине, по выслоте, внутри родительского*/ 
+    flex-direction: row; /* row - говорит, что главной осью по умолчанию будет "x", блоки будут располагаться с лева на право, если не названо иное*/
+    display: flex; /* Расширяет границы кликабельности ссылок до границы блока. Распологает ссылки рядом, а не друг над другом*/ 
+    height: 50px;
+    float: right;
+
+}
+
+
+#navWrap a { /* Селектор элемента или группы элемента. Он определяет стиль для всех тегов "а" внутри тега navWrap. */
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: block; /* Тег "а" - строчный элемент, для того чтобы сделать его блочным */
+    font-family: "Open Sans" sans-serif;
+    color: #fff;
+    padding: 0 20px;
+    height: 70px;
+    line-height: 70px;
+    text-decoration: none;
+
+}
+
+#navWrap a:last-child { /* Убрать левую границу у последнегол теге "а", который лежит в теге "navWrap", чтобы не было толстой вертикальной линии между блоками Главная и Магазин*/
+    border-left: none;
+}
+
+#navWrap a:hover { /* hover - псевдо класс, который показывает стиль ссылок при наведении*/
+    background: #5e5e5e;
+}
+
+
